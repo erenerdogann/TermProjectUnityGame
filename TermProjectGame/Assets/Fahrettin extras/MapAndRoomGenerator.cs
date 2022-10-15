@@ -16,27 +16,6 @@ public class MapAndRoomGenerator : MapGlobalVeriables
     private int[] FinalArrayObjects;
     private int[] FinalArrayRooms =null;
 
-
-    private GameObject[] Adaptor(int[] AdaptedNumArr, GameObject[] ToAdopt)
-    {
-        for (int i = 0; i < objects.Length; i++)
-        {
-            int j = AdaptedNumArr[i];
-            ToAdopt[i] = objects[j];
-        }
-        return ToAdopt;
-    }
-
-    
-    private void Place(GameObject[] wanted, int MaxSize, string WhatItIs)
-    {
-        for(int i =0; i < MaxSize; i++)
-        {
-            string FullName = WhatItIs + " (" + i + ")";
-            Instantiate(wanted[i], GameObject.Find(FullName).transform.position, Quaternion.identity);
-        }
-    }
-
     private void Start()
     {
 
@@ -86,6 +65,27 @@ public class MapAndRoomGenerator : MapGlobalVeriables
         return false;
     }
 
+    private GameObject[] Adaptor(int[] AdaptedNumArr, GameObject[] ToAdopt)
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            int j = AdaptedNumArr[i];
+            ToAdopt[i] = objects[j];
+        }
+        return ToAdopt;
+    }
+
+
+    private void Place(GameObject[] wanted, int MaxSize, string WhatItIs)
+    {
+        for (int i = 0; i < MaxSize; i++)
+        {
+            string FullName = WhatItIs + " (" + i + ")";
+            Instantiate(wanted[i], GameObject.Find(FullName).transform.position, Quaternion.identity);
+        }
+    }
+
+
     protected GameObject GetSpesificObject_FinalArrayObjects_AsObject(int wanted)
     {
 
@@ -105,80 +105,4 @@ public class MapAndRoomGenerator : MapGlobalVeriables
         }    
         return null;
     }
-
-    //additions:
-    //bullshit but can be usefull:
-
-    /*
-     * 
-     * private void Print()
-    {
-        for (int i= 0; i < objects.Length; i++)
-        {
-            Debug.Log(Objacts_arr[i]);
-        }
-    }
-     * 
-     * private void Tester(int[] wanted)
-    {
-        Debug.Log("The numbers are:");
-        for (int i = 0; i < wanted.Length; i++)
-        {
-            Debug.Log(wanted[i]);
-        }
-    }
-    protected int[] GetAll_FinalArrayObjects_AsInt()
-    {
-        return FinalArrayObjects;
-    }
-
-    protected int[] GetAll_FinalArrayRooms_AsInt()
-    {
-        return FinalArrayRooms;
-    }
-
-    protected int GetSpesificObject_FinalArrayObjects_AsInt(int wanted)
-    {
-        for (int i=0; i < FinalArrayObjects.Length; i++)
-            if (i == wanted)
-                return FinalArrayObjects[i];
-        return -1;
-    }
-
-    protected int GetSpesificObject_FinalArrayRooms_AsInt(int wanted)
-    {
-        for (int i = 0; i < FinalArrayRooms.Length; i++)
-            if (i == wanted)
-                return FinalArrayRooms[i];
-        return -1;
-    }
-
-    public int Retturrnnnnn()
-    {
-        return 1;
-    }
-
-    
-         * //horizontal search:
-         for (int i = 0; i < objects.Length; i++)
-        {
-            Debug.Log("I am in first for for value of " + i);
-            //Working with spesific value:
-            for (int value_in_array = 0; value_in_array < AdaptedNumArr.Length; value_in_array++)
-            {
-                Debug.Log("I am in First for for value of '" + i + "' and I am trying to find that value inside of array, and I am currently '" + value_in_array+"'");
-                //Finding were should sit our spesific value:
-                if (AdaptedNumArr[i] == AdaptedNumArr[value_in_array])
-                {
-                    Debug.Log("I am adding the value of '" + value_in_array + "' and");
-                    ToAdopt[0, i] = objects[value_in_array];
-                    break;
-                }
-            }
-        }
-         */
-
-
-    //Notes:
-    //Instantiate(objects[rand], transform.position, Quaternion.identity);
 }
