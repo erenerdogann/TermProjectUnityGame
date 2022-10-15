@@ -20,7 +20,7 @@ public class MapAndRoomGenerator : MapGlobalVeriables
     private int[] FinalArrayRooms =null;
 
     private void Start()
-    {
+    { 
 
         ObjectMaxSize = objects.Length;
         RoomMaxSize = Rooms.Length;
@@ -84,7 +84,8 @@ public class MapAndRoomGenerator : MapGlobalVeriables
         for (int i = 0; i < MaxSize; i++)
         {
             string FullName = WhatItIs + " (" + i + ")";
-            Instantiate(wanted[i], GameObject.Find(FullName).transform.position, Quaternion.identity);
+            if (Instantiate(wanted[i], GameObject.Find(FullName).transform.position, Quaternion.identity)) { }
+                else break;
         }
     }
 
