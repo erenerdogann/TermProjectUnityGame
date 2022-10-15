@@ -5,7 +5,10 @@ using UnityEngine;
 public class MapAndRoomGenerator : MapGlobalVeriables
 {
     public GameObject[] objects;
+    public string WhatIamWorking;
+
     public GameObject[] Rooms;
+    
 
     private GameObject[] Objacts_arr;
     private GameObject[] Room_arr;
@@ -32,7 +35,7 @@ public class MapAndRoomGenerator : MapGlobalVeriables
 
         //Room_arr = Adaptor(AdaptedNumArr: FinalArrayRooms, ToAdopt: Room_arr);
 
-        Place(wanted: Objacts_arr, MaxSize: ObjectMaxSize, WhatItIs: "Cube");
+        Place(wanted: Objacts_arr, MaxSize: ObjectMaxSize, WhatItIs: WhatIamWorking);
 
     }
 
