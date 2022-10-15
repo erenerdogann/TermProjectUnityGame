@@ -776,7 +776,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f498ca9761622e4eab880e45180108a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects: []
+  objects:
+  - {fileID: 2084285022245683483, guid: e5da07a639f9b3b46af4baf9a9955ee3, type: 3}
+  - {fileID: 7948366333113757268, guid: 1aadb60e06af03642a1205093dc1fed2, type: 3}
+  - {fileID: 7197668769265088031, guid: eb55ca5dae82e5a4ca63dce0912cd279, type: 3}
+  - {fileID: 1393745253502535200, guid: f8119aa3e184fcb46afe0e5784aaaa3f, type: 3}
   Rooms: []
 --- !u!1 &1429097077
 GameObject:
@@ -985,7 +989,7 @@ GameObject:
   - component: {fileID: 1669513779}
   - component: {fileID: 1669513778}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube (0)
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1062,7 +1066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669513777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.940876, y: -0.34853923, z: -1.5983734}
+  m_LocalPosition: {x: 1.9399986, y: -0.34853923, z: -1.5983734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
