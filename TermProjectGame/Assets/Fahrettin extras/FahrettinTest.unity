@@ -864,6 +864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808432976}
   - component: {fileID: 808432977}
+  - component: {fileID: 808432978}
   m_Layer: 0
   m_Name: cubes
   m_TagString: Untagged
@@ -911,6 +912,22 @@ MonoBehaviour:
   - {fileID: 2727477672534932381, guid: c7fba5040ec207541bd48929192efcf1, type: 3}
   - {fileID: 2727477672534932381, guid: c7fba5040ec207541bd48929192efcf1, type: 3}
   WhatIamWorking: MyNEWobject
+  Rooms: []
+--- !u!114 &808432978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808432975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41edea99e01d6244694ab86396d7e1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllObjectss: []
+  objects: []
+  WhatIamWorking: 
   Rooms: []
 --- !u!1001 &1177241391
 PrefabInstance:

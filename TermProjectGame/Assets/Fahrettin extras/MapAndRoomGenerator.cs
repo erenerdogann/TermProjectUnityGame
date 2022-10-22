@@ -17,7 +17,7 @@ public class MapAndRoomGenerator : MapGlobalVeriables
     private int RoomMaxSize = 0;
 
     private int[] FinalArrayObjects;
-    private int[] FinalArrayRooms =null;
+    private readonly int[] FinalArrayRooms =null;
 
     private void Start()
     { 
