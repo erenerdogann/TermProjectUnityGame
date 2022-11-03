@@ -925,10 +925,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41edea99e01d6244694ab86396d7e1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllObjectss: []
-  objects: []
-  WhatIamWorking: 
   Rooms: []
+  Room_names:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  Kitchen_Objects: []
+  Office_objects: []
+  Room3_objects: []
+  Room4_objects: []
+  Room5_objects: []
+  Room6_objects: []
+  Room7_objects: []
 --- !u!1001 &1177241391
 PrefabInstance:
   m_ObjectHideFlags: 0
