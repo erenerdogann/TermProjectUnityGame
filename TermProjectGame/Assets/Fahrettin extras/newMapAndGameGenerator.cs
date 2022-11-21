@@ -39,9 +39,10 @@ public class Objected
 
 public class newMapAndGameGenerator : MonoBehaviour
 {
-    public GameObject[] Rooms;
+    public GameObject[] houses;
+    public GameObject[] RandomObjectsAndHouses;
 
-    public string[] Room_names = new string[7];
+    public string[] house_names = new string[7];
 
 
 
@@ -54,24 +55,39 @@ public class newMapAndGameGenerator : MonoBehaviour
     public GameObject[] Room7_objects;
 
 
+    LinkedList<Objected> ListedGameObject = new();
 
-
-    private  GameObject[] Room_arr;
-
-    private int[] FinalArrayRooms = null;
-    readonly LinkedList<Objected> ListedGameObject = new();
-
-    
+    private GameObject[] Adaptor(GameObject[] objects, int[] AdaptedNumArr, GameObject[] ToAdopt)
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            int j = AdaptedNumArr[i];
+            ToAdopt[i] = objects[j];
+        }
+        return ToAdopt;
+    }
 
     private void Start()
     {
         LinkedListAdaptation();
         GameObject[] Objacts_arr;
+        GameObject[] Room_arr = new GameObject[7];
+        GameObject[] RandomBulding_arr = new GameObject[6];
 
 
-        FinalArrayRooms = Calculator(objects: Rooms,maxSize: Rooms.Length);
-        Room_arr = Adaptor(objects: Rooms, AdaptedNumArr: FinalArrayRooms, ToAdopt: Room_arr);
-        Place(wanted: Room_arr, MaxSize: Rooms.Length, WhatItIs: "Room");
+        int[] roomIntArr = new int[7];
+        int[] RandomItemIntArr = new int[6];
+
+        RandomItemIntArr = Calculator(objects: RandomObjectsAndHouses, maxSize: RandomObjectsAndHouses.Length);
+        RandomBulding_arr = Adaptor(objects: RandomObjectsAndHouses, AdaptedNumArr: RandomItemIntArr, ToAdopt: RandomBulding_arr);
+        Place(wanted: RandomBulding_arr, MaxSize: RandomBulding_arr.Length, WhatItIs: "Bulding");
+
+
+        roomIntArr = Calculator(objects: houses, maxSize: houses.Length);
+        Room_arr = Adaptor(objects: houses, AdaptedNumArr: roomIntArr, ToAdopt: Room_arr);
+        Place(wanted: Room_arr, MaxSize: Room_arr.Length, WhatItIs: "house");
+
+
 
 
 
@@ -87,25 +103,25 @@ public class newMapAndGameGenerator : MonoBehaviour
     {
 
 
-        Objected obj = new(Kitchen_Objects, Room_names[0]);
+        Objected obj = new(Kitchen_Objects, house_names[0]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Office_objects, Room_names[1]);
+        obj.SetFully(Office_objects, house_names[1]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Room3_objects, Room_names[2]);
+        obj.SetFully(Room3_objects, house_names[2]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Room4_objects, Room_names[3]);
+        obj.SetFully(Room4_objects, house_names[3]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Room5_objects, Room_names[4]);
+        obj.SetFully(Room5_objects, house_names[4]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Room6_objects, Room_names[5]);
+        obj.SetFully(Room6_objects, house_names[5]);
         ListedGameObject.AddLast(obj);
 
-        obj.SetFully(Room7_objects, Room_names[6]);
+        obj.SetFully(Room7_objects, house_names[6]);
         ListedGameObject.AddLast(obj);
 
         //ListedGameObject.RemoveFirst();
@@ -142,15 +158,7 @@ public class newMapAndGameGenerator : MonoBehaviour
         return false;
     }
 
-    private GameObject[] Adaptor(GameObject[] objects, int[] AdaptedNumArr, GameObject[] ToAdopt)
-    {
-        for (int i = 0; i < objects.Length; i++)
-        {
-             int j = AdaptedNumArr[i];
-            ToAdopt[i] = objects[j];
-        }
-        return ToAdopt;
-    }
+    
 
 
     private void Place(GameObject[] wanted, int MaxSize, string WhatItIs)
