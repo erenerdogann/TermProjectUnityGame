@@ -72,11 +72,11 @@ public class newMapAndGameGenerator : MonoBehaviour
         LinkedListAdaptation();
         GameObject[] Objacts_arr;
         GameObject[] Room_arr = new GameObject[7];
-        GameObject[] RandomBulding_arr = new GameObject[6];
+        GameObject[] RandomBulding_arr = new GameObject[10];
 
 
         int[] roomIntArr = new int[7];
-        int[] RandomItemIntArr = new int[6];
+        int[] RandomItemIntArr = new int[10];
 
         RandomItemIntArr = Calculator(objects: RandomObjectsAndHouses, maxSize: RandomObjectsAndHouses.Length);
         RandomBulding_arr = Adaptor(objects: RandomObjectsAndHouses, AdaptedNumArr: RandomItemIntArr, ToAdopt: RandomBulding_arr);
