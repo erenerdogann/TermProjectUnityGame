@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23289743593851018}
   - component: {fileID: 64490057689531040}
   m_Layer: 0
-  m_Name: SM_Bld_Barn_02
+  m_Name: house 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

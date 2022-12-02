@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23963026499939696}
   - component: {fileID: 64437599982588062}
   m_Layer: 0
-  m_Name: SM_Bld_Farmhouse_01
+  m_Name: house 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
