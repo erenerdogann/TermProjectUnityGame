@@ -40,7 +40,7 @@ public class Objected
 public class newMapAndGameGenerator : MonoBehaviour
 {
     public GameObject[] houses;
-    public GameObject[] RandomObjectsAndHouses;
+    public GameObject[] buldings;
 
     public string[] house_names = new string[7];
 
@@ -76,19 +76,16 @@ public class newMapAndGameGenerator : MonoBehaviour
 
 
         int[] roomIntArr = new int[7];
-        int[] RandomItemIntArr = new int[10];
+        int[] RandombuldingsIntArr = new int[10];
 
-        RandomItemIntArr = Calculator(objects: RandomObjectsAndHouses, maxSize: RandomObjectsAndHouses.Length);
-        RandomBulding_arr = Adaptor(objects: RandomObjectsAndHouses, AdaptedNumArr: RandomItemIntArr, ToAdopt: RandomBulding_arr);
+        RandombuldingsIntArr = Calculator(objects: buldings, maxSize: buldings.Length);
+        RandomBulding_arr = Adaptor(objects: buldings, AdaptedNumArr: RandombuldingsIntArr, ToAdopt: RandomBulding_arr);
         Place(wanted: RandomBulding_arr, MaxSize: RandomBulding_arr.Length, WhatItIs: "Bulding");
 
 
         roomIntArr = Calculator(objects: houses, maxSize: houses.Length);
         Room_arr = Adaptor(objects: houses, AdaptedNumArr: roomIntArr, ToAdopt: Room_arr);
-        Place(wanted: Room_arr, MaxSize: Room_arr.Length, WhatItIs: "house");
-
-
-
+        Place(wanted: Room_arr, MaxSize: Room_arr.Length, WhatItIs: "House");
 
 
         foreach (Objected i in ListedGameObject)
